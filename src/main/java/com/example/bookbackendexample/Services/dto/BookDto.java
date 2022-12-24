@@ -2,11 +2,13 @@ package com.example.bookbackendexample.Services.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class BookDto {
 
     private String author;
@@ -14,6 +16,7 @@ public class BookDto {
     private double price ;
     private Date written;
     private String description;
+
 
 
 }

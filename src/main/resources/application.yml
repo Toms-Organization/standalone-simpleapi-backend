@@ -1,0 +1,15 @@
+server:
+  port: 7000
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/booksbackend
+    username: root
+    password: 123456tg
+
+#  spring.jpa.hibernate.ddl-auto=update
+#  spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/demoversion
+#  spring.datasource.username=root
+#  spring.datasource.password=123456tg
+

@@ -72,4 +72,9 @@ public class BookService {
         List<Book> listOfBooksBySearch = bookRepository.findAllByPrice(priceValue);
         return converter.convertToBookDto(listOfBooksBySearch);
     }
+
+    public List<BookDto> getAllBooksBetweenPriceRange(double value1, double value2) {
+        List<Book> listOfBooksBySearch = util.sortByPrice(bookRepository.findAllByPriceBetween(value1, value2));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
 }

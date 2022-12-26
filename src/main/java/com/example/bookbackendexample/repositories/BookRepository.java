@@ -23,5 +23,9 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
     List<Book> findAllByPrice(double price);
 
+    List<Book> findAllByPriceBetween(double val1, double val2);
+
+
+
 
 }

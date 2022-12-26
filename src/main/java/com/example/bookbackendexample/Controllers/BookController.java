@@ -4,6 +4,7 @@ import com.example.bookbackendexample.Services.BookService;
 import com.example.bookbackendexample.Services.dto.BookDto;
 import com.example.bookbackendexample.models.Book;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.format.annotation.NumberFormat;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
@@ -76,7 +77,10 @@ public class BookController {
         return bookService.getBooksWithSpecificPrice(priceValue);
     }
 
-
+    @GetMapping("/price/{value1}/{value2}")
+    public List<BookDto> getAllBooksBetweenPriceInterval(@PathVariable("value1") double value1, @PathVariable("value2") double value2){
+        return bookService.getAllBooksBetweenPriceRange(value1, value2);
+    }
 
 
 }

@@ -14,12 +14,11 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
       List<Book> findAll();
-      List<Book> findBookByAuthor(String name);
       List<Book> findAllByTitleContainingIgnoreCase(String searchWord);
-//    List<Book> findAll();
-//    List<Book> findByName(String name);
-//    List<Book> findByNumber(int number);
-//    List<Book> findByNameAndNumber(String name, int number);
+      List<Book> findAllById(int id);
+      List<Book> findAllByAuthorContainingIgnoreCase(String searchWord);
+
+
 
 
 }

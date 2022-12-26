@@ -34,11 +34,35 @@ public class BookController {
         return bookService.getAllBooksAndSortById();
     }
 
-
-    @GetMapping("/id/{SearchableString}")
-    public List<BookDto> getAllBooksContainingStringInOrderById(@PathVariable String SearchableString){
-        return bookService.getBooksContainingStringAndSortById(SearchableString);
+    /**
+     * @param id
+     * @return A single book with matching ID
+     * Note that this returns a single object
+     * http://localhost:7000/books/book/1
+     */
+    @GetMapping("/id/{id}")
+    public List<BookDto> getBookWithTheId(@PathVariable int id){
+        return bookService.getBookById(id);
     }
+
+    @GetMapping("/author")
+    public List<BookDto> getAllBooksSortedByAuthor(){
+        return bookService.getAllBooksAndSortedByAuthor();
+    }
+
+
+    @GetMapping("/author/{SearchableString}")
+    public List<BookDto> getAllBooksContainingAuthorStringOrderById(@PathVariable String SearchableString){
+        return bookService.getBooksContainingAuthorStringAndSortById(SearchableString);
+    }
+
+
+
+    @GetMapping("/title/{SearchableString}")
+    public List<BookDto> getAllBooksContainingTitleStringOrderById(@PathVariable String SearchableString){
+        return bookService.getBooksContainingTitleStringAndSortById(SearchableString);
+    }
+
 
 
 

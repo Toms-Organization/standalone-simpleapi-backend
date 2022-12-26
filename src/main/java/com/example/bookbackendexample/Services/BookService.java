@@ -22,15 +22,41 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public List<Book> getBooks() {
-        return bookRepository.findAll();
-    }
-
     public List<BookDto> getAllBooks(){
-        // converter.convertToBookDto(bookRepository.findAll());
         return converter.convertToBookDto(bookRepository.findAll());
     }
 
+    public List<BookDto> getAllBooksAndSortById() {
+        List<Book> listOfBooksSortedById = util.sortAListById(bookRepository.findAll());
+        return converter.convertToBookDto(listOfBooksSortedById);
+    }
+
+
+
+    public List<BookDto> getBooksContainingTitleStringAndSortById(String SearchableString) {
+        List<Book> listOfBooksBySearch = util.sortAListById(bookRepository.findAllByTitleContainingIgnoreCase(SearchableString));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
+
+    /**
+     * @param id
+     * @return returns just one book with the specific id.
+     */
+    public List<BookDto> getBookById(int id) {
+        List<Book> listOfBooksBySearch = util.sortAListById(bookRepository.findAllById(id));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
+
+    public List<BookDto> getBooksContainingAuthorStringAndSortById(String SearchableString) {
+        List<Book> listOfBooksBySearch = util.sortAListById(bookRepository.findAllByAuthorContainingIgnoreCase(SearchableString));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
+
+    public List<BookDto> getAllBooksAndSortedByAuthor() {
+        List<Book> listOfBooksSortedByAuthor= util.sortAListByAuthor(bookRepository.findAll());
+        return converter.convertToBookDto(listOfBooksSortedByAuthor);
+
+    }
     public Book getBook(Integer id) {
         return bookRepository.findById(id).orElse(null);
     }
@@ -45,13 +71,10 @@ public class BookService {
         }
     }
 
-    public List<BookDto> getAllBooksAndSortById() {
-        List<Book> listOfBooksSortedById = util.sortAListById(bookRepository.findAll());
-        return converter.convertToBookDto(listOfBooksSortedById);
+
+    public List<Book> getBooks() {
+        return bookRepository.findAll();
     }
 
-    public List<BookDto> getBooksContainingStringAndSortById(String SearchableString) {
-        List<Book> listOfBooksBySearch = util.sortAListById(bookRepository.findAllByTitleContainingIgnoreCase(SearchableString));
-        return converter.convertToBookDto(listOfBooksBySearch);
-    }
+
 }

@@ -21,4 +21,11 @@ public class Util {
                 .collect(Collectors.toList());
         return sortedList;
     }
+
+    public List<Book> sortAListByAuthor(List<Book> listToSort) {
+        List<Book> sortedList = listToSort.stream()
+                .sorted(Comparator.comparing(Book::getAuthor))
+                .collect(Collectors.toList());
+        return sortedList;
+    }
 }

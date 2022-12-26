@@ -12,6 +12,7 @@ import java.util.Date;
 public class BookDto {
 
     private String author;
+    private String title;
     private String genre;
     private double price ;
     private Date written;

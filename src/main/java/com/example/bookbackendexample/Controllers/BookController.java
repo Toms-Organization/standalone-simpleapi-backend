@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 @Component
 @CrossOrigin
 @EnableAutoConfiguration
@@ -26,7 +24,6 @@ public class BookController {
         this.bookService = bookService;
     }
 
-
     @GetMapping("/")
     public List<BookDto> getAllBooksFromDb(){
         return bookService.getAllBooks();
@@ -37,6 +34,11 @@ public class BookController {
         return bookService.getAllBooksAndSortById();
     }
 
+
+    @GetMapping("/id/{SearchableString}")
+    public List<BookDto> getAllBooksContainingStringInOrderById(@PathVariable String SearchableString){
+        return bookService.getBooksContainingStringAndSortById(SearchableString);
+    }
 
 
 

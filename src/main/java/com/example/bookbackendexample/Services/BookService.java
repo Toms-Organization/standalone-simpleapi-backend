@@ -49,4 +49,9 @@ public class BookService {
         List<Book> listOfBooksSortedById = util.sortAListById(bookRepository.findAll());
         return converter.convertToBookDto(listOfBooksSortedById);
     }
+
+    public List<BookDto> getBooksContainingStringAndSortById(String SearchableString) {
+        List<Book> listOfBooksBySearch = util.sortAListById(bookRepository.findAllByTitleContainingIgnoreCase(SearchableString));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
 }

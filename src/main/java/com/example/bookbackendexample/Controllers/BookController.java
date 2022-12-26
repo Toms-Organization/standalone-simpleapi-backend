@@ -20,11 +20,19 @@ import java.util.List;
 public class BookController {
 
 
-    public BookService bookService;
+    private final BookService bookService;
 
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
+
+
+    @GetMapping("/")
+    public List<BookDto> getAllBooksFromDb(){
+        return bookService.getAllBooks();
+    }
+
+
 
 
     /**

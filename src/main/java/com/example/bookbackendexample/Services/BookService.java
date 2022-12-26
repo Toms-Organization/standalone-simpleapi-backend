@@ -1,6 +1,7 @@
 package com.example.bookbackendexample.Services;
 
 import com.example.bookbackendexample.Services.dto.BookDto;
+import com.example.bookbackendexample.Util.Converter;
 import com.example.bookbackendexample.models.Book;
 import com.example.bookbackendexample.repositories.BookRepository;
 import org.modelmapper.ModelMapper;
@@ -13,7 +14,8 @@ public class BookService {
 
 
     private final ModelMapper mapper = new ModelMapper();
-    public BookRepository bookRepository;
+    private final BookRepository bookRepository;
+    private final Converter converter = new Converter();
 
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
@@ -21,6 +23,11 @@ public class BookService {
 
     public List<Book> getBooks() {
         return bookRepository.findAll();
+    }
+
+    public List<BookDto> getAllBooks(){
+        // converter.convertToBookDto(bookRepository.findAll());
+        return converter.convertToBookDto(bookRepository.findAll());
     }
 
     public Book getBook(Integer id) {

@@ -41,4 +41,14 @@ public class Util {
                 .collect(Collectors.toList());
         return sortedList;
     }
+
+    public List<Book> sortByDatePublished(List<Book> listToSort) {
+        List<Book> sortedList = listToSort.stream()
+                .sorted(Comparator.comparing(Book::getWritten))
+                .collect(Collectors.toList());
+        return sortedList;
+    }
+
+
+
 }

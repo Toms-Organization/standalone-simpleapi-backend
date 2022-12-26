@@ -7,6 +7,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 
@@ -25,7 +27,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
     List<Book> findAllByPriceBetween(double val1, double val2);
 
-
+    List<Book> findAllByWrittenBetween(Date dateOne, Date dateTwo);
 
 
 }

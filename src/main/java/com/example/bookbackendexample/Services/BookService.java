@@ -6,8 +6,16 @@ import com.example.bookbackendexample.Util.Util;
 import com.example.bookbackendexample.models.Book;
 import com.example.bookbackendexample.repositories.BookRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 @Service
@@ -77,4 +85,23 @@ public class BookService {
         List<Book> listOfBooksBySearch = util.sortByPrice(bookRepository.findAllByPriceBetween(value1, value2));
         return converter.convertToBookDto(listOfBooksBySearch);
     }
+
+    public List<BookDto> getAllBooksAndSortByPublished() {
+        List<Book> listOfBooksBySearch =  util.sortByDatePublished(bookRepository.findAll());
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
+
+    public List<BookDto> getAllBooksWrittenThisYear(int value1) {
+        Date startDate = converter.getStartDateFromAYear(value1);
+        Date endDate = converter.getEndDateFromAYear(value1);
+        System.out.println(startDate);
+        System.out.println(endDate);
+        List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(startDate, endDate));
+
+
+
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
+
+
 }

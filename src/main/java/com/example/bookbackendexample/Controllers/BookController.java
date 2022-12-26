@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -82,5 +83,16 @@ public class BookController {
         return bookService.getAllBooksBetweenPriceRange(value1, value2);
     }
 
+
+    @GetMapping("/published")
+    public List<BookDto> getAllBooksByPublishedDate(){
+        return bookService.getAllBooksAndSortByPublished();
+    }
+
+
+    @GetMapping("/published/{value1}")
+    public List<BookDto> getAllBooksWrittenThatYear(@PathVariable("value1") int value1){
+        return bookService.getAllBooksWrittenThisYear(value1);
+    }
 
 }

@@ -32,6 +32,11 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
+    @GetMapping("/id")
+    public List<BookDto> getAllBooksFromDbInOrderbyID(){
+        return bookService.getAllBooksAndSortById();
+    }
+
 
 
 

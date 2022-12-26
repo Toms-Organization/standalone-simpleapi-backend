@@ -2,6 +2,7 @@ package com.example.bookbackendexample.Services;
 
 import com.example.bookbackendexample.Services.dto.BookDto;
 import com.example.bookbackendexample.Util.Converter;
+import com.example.bookbackendexample.Util.Util;
 import com.example.bookbackendexample.models.Book;
 import com.example.bookbackendexample.repositories.BookRepository;
 import org.modelmapper.ModelMapper;
@@ -12,7 +13,7 @@ import java.util.List;
 @Service
 public class BookService {
 
-
+    private final Util util = new Util();
     private final ModelMapper mapper = new ModelMapper();
     private final BookRepository bookRepository;
     private final Converter converter = new Converter();
@@ -44,7 +45,8 @@ public class BookService {
         }
     }
 
-
-
-
+    public List<BookDto> getAllBooksAndSortById() {
+        List<Book> listOfBooksSortedById = util.sortAListById(bookRepository.findAll());
+        return converter.convertToBookDto(listOfBooksSortedById);
+    }
 }

@@ -50,57 +50,32 @@ public class BookController {
         return bookService.getAllBooksAndSortedByAuthor();
     }
 
-
     @GetMapping("/author/{SearchableString}")
     public List<BookDto> getAllBooksContainingAuthorStringOrderById(@PathVariable String SearchableString){
         return bookService.getBooksContainingAuthorStringAndSortById(SearchableString);
     }
 
 
+    @GetMapping("/title")
+    public List<BookDto> getAllBooksSortByTitle(){
+        return bookService.getAllBooksSortByTitle();
+    }
 
     @GetMapping("/title/{SearchableString}")
     public List<BookDto> getAllBooksContainingTitleStringOrderById(@PathVariable String SearchableString){
         return bookService.getBooksContainingTitleStringAndSortById(SearchableString);
     }
 
-
-
-
-    /**
-     * @param id
-     * @return A single book with matching ID
-     * Note that this returns a single object
-     * http://localhost:7000/books/book/1
-     */
-    @GetMapping("/book/{id}")
-    public Book getSingleBookWithId(@PathVariable Integer id){
-        return bookService.getBook(id);
+    @GetMapping("/price")
+    public List<BookDto> getAllBooksOrderByPrice(){
+        return bookService.getBooksOrderByPrice();
     }
 
-
-    /**
-     * @return All books from DB in a list
-     * http://localhost:7000/books/allbooksInAList
-     */
-    @GetMapping("/allbooksInAList")
-    public List<Book> getAllbookInAList(){
-        return bookService.getBooks();
+    @GetMapping("/price/{priceValue}")
+    public List<BookDto> getAllBooksOrderByPrice(@PathVariable double priceValue){
+        return bookService.getBooksWithSpecificPrice(priceValue);
     }
 
-
-    /**
-     * @param id
-     * @return A BookDto based on the ID... The Dto holds other values
-     * http://localhost:7000/books/booksDto/1
-     */
-    @GetMapping("/booksDto/{id}")
-    public List<BookDto> getSingleBookAsDto(@PathVariable Integer id){
-        List<BookDto> returnList = new ArrayList<>();
-        if (bookService.getBook2(id) != null) {
-            returnList.add(bookService.getBook2(id));
-        }
-        return returnList;
-    }
 
 
 

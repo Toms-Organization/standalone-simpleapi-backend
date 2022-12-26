@@ -13,12 +13,15 @@ import java.util.List;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
-      List<Book> findAll();
-      List<Book> findAllByTitleContainingIgnoreCase(String searchWord);
-      List<Book> findAllById(int id);
-      List<Book> findAllByAuthorContainingIgnoreCase(String searchWord);
+    List<Book> findAll();
 
+    List<Book> findAllByTitleContainingIgnoreCase(String searchWord);
 
+    List<Book> findAllById(int id);
+
+    List<Book> findAllByAuthorContainingIgnoreCase(String searchWord);
+
+    List<Book> findAllByPrice(double price);
 
 
 }

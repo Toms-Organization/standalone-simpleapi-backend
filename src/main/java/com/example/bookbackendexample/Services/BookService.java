@@ -57,24 +57,19 @@ public class BookService {
         return converter.convertToBookDto(listOfBooksSortedByAuthor);
 
     }
-    public Book getBook(Integer id) {
-        return bookRepository.findById(id).orElse(null);
+
+    public List<BookDto> getAllBooksSortByTitle() {
+        List<Book> listOfBooksSortedByTitle= util.sortAListByTitle(bookRepository.findAll());
+        return converter.convertToBookDto(listOfBooksSortedByTitle);
     }
 
-    public BookDto getBook2(Integer id) {
-        Book bookA = bookRepository.findById(id).orElse(null);
-        if(bookA!=null){
-            BookDto dto = mapper.map(bookA, BookDto.class);
-            return dto;
-        }else{
-            return null;
-        }
+    public List<BookDto> getBooksOrderByPrice() {
+        List<Book> listOfBooksBySearch = util.sortByPrice(bookRepository.findAll());
+        return converter.convertToBookDto(listOfBooksBySearch);
     }
 
-
-    public List<Book> getBooks() {
-        return bookRepository.findAll();
+    public List<BookDto> getBooksWithSpecificPrice(double priceValue) {
+        List<Book> listOfBooksBySearch = bookRepository.findAllByPrice(priceValue);
+        return converter.convertToBookDto(listOfBooksBySearch);
     }
-
-
 }

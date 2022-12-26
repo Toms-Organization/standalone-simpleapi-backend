@@ -14,7 +14,6 @@ public class Util {
 
     public Util(){}
 
-
     public List<Book> sortAListById(List<Book> listToSort) {
         List<Book> sortedList = listToSort.stream()
                 .sorted(Comparator.comparing(Book::getId))
@@ -25,6 +24,20 @@ public class Util {
     public List<Book> sortAListByAuthor(List<Book> listToSort) {
         List<Book> sortedList = listToSort.stream()
                 .sorted(Comparator.comparing(Book::getAuthor))
+                .collect(Collectors.toList());
+        return sortedList;
+    }
+
+    public List<Book> sortAListByTitle(List<Book> listToSort) {
+        List<Book> sortedList = listToSort.stream()
+                .sorted(Comparator.comparing(Book::getTitle))
+                .collect(Collectors.toList());
+        return sortedList;
+    }
+
+    public List<Book> sortByPrice(List<Book> listToSort) {
+        List<Book> sortedList = listToSort.stream()
+                .sorted(Comparator.comparing(Book::getPrice))
                 .collect(Collectors.toList());
         return sortedList;
     }

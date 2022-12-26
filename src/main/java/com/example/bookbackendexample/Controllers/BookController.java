@@ -4,13 +4,13 @@ import com.example.bookbackendexample.Services.BookService;
 import com.example.bookbackendexample.Services.dto.BookDto;
 import com.example.bookbackendexample.models.Book;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.format.annotation.NumberFormat;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-
-
 
 @Component
 @CrossOrigin
@@ -20,12 +20,21 @@ import java.util.List;
 public class BookController {
 
 
-    public BookService bookService;
+    private final BookService bookService;
 
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
 
+    @GetMapping("/")
+    public List<BookDto> getAllBooksFromDb(){
+        return bookService.getAllBooks();
+    }
+
+    @GetMapping("/id")
+    public List<BookDto> getAllBooksFromDbInOrderbyID(){
+        return bookService.getAllBooksAndSortById();
+    }
 
     /**
      * @param id
@@ -33,36 +42,57 @@ public class BookController {
      * Note that this returns a single object
      * http://localhost:7000/books/book/1
      */
-    @GetMapping("/book/{id}")
-    public Book getSingleBookWithId(@PathVariable Integer id){
-        return bookService.getBook(id);
+    @GetMapping("/id/{id}")
+    public List<BookDto> getBookWithTheId(@PathVariable int id){
+        return bookService.getBookById(id);
+    }
+
+    @GetMapping("/author")
+    public List<BookDto> getAllBooksSortedByAuthor(){
+        return bookService.getAllBooksAndSortedByAuthor();
+    }
+
+    @GetMapping("/author/{SearchableString}")
+    public List<BookDto> getAllBooksContainingAuthorStringOrderById(@PathVariable String SearchableString){
+        return bookService.getBooksContainingAuthorStringAndSortById(SearchableString);
     }
 
 
-    /**
-     * @return All books from DB in a list
-     * http://localhost:7000/books/allbooksInAList
-     */
-    @GetMapping("/allbooksInAList")
-    public List<Book> getAllbookInAList(){
-        return bookService.getBooks();
+    @GetMapping("/title")
+    public List<BookDto> getAllBooksSortByTitle(){
+        return bookService.getAllBooksSortByTitle();
+    }
+
+    @GetMapping("/title/{SearchableString}")
+    public List<BookDto> getAllBooksContainingTitleStringOrderById(@PathVariable String SearchableString){
+        return bookService.getBooksContainingTitleStringAndSortById(SearchableString);
+    }
+
+    @GetMapping("/price")
+    public List<BookDto> getAllBooksOrderByPrice(){
+        return bookService.getBooksOrderByPrice();
+    }
+
+    @GetMapping("/price/{priceValue}")
+    public List<BookDto> getAllBooksOrderByPrice(@PathVariable double priceValue){
+        return bookService.getBooksWithSpecificPrice(priceValue);
+    }
+
+    @GetMapping("/price/{value1}/{value2}")
+    public List<BookDto> getAllBooksBetweenPriceInterval(@PathVariable("value1") double value1, @PathVariable("value2") double value2){
+        return bookService.getAllBooksBetweenPriceRange(value1, value2);
     }
 
 
-    /**
-     * @param id
-     * @return A BookDto based on the ID... The Dto holds other values
-     * http://localhost:7000/books/booksDto/1
-     */
-    @GetMapping("/booksDto/{id}")
-    public List<BookDto> getSingleBookAsDto(@PathVariable Integer id){
-        List<BookDto> returnList = new ArrayList<>();
-        if (bookService.getBook2(id) != null) {
-            returnList.add(bookService.getBook2(id));
-        }
-        return returnList;
+    @GetMapping("/published")
+    public List<BookDto> getAllBooksByPublishedDate(){
+        return bookService.getAllBooksAndSortByPublished();
     }
 
 
+    @GetMapping("/published/{value1}")
+    public List<BookDto> getAllBooksWrittenThatYear(@PathVariable("value1") int value1){
+        return bookService.getAllBooksWrittenThisYear(value1);
+    }
 
 }

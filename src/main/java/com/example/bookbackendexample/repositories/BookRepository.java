@@ -7,18 +7,27 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer> {
 
-      List<Book> findAll();
-      List<Book> findBookByAuthor(String name);
-//    List<Book> findAll();
-//    List<Book> findByName(String name);
-//    List<Book> findByNumber(int number);
-//    List<Book> findByNameAndNumber(String name, int number);
+    List<Book> findAll();
+
+    List<Book> findAllByTitleContainingIgnoreCase(String searchWord);
+
+    List<Book> findAllById(int id);
+
+    List<Book> findAllByAuthorContainingIgnoreCase(String searchWord);
+
+    List<Book> findAllByPrice(double price);
+
+    List<Book> findAllByPriceBetween(double val1, double val2);
+
+    List<Book> findAllByWrittenBetween(Date dateOne, Date dateTwo);
 
 
 }

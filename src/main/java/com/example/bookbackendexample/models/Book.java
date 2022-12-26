@@ -22,6 +22,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String author;
+    private String title;
     private String genre;
     private double price ;
     private Date written;

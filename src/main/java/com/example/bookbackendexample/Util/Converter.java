@@ -66,6 +66,12 @@ public class Converter {
     }
 
 
-
-
+    public LocalDate getSpecficDate(int year, int month, int day) {
+        Calendar calendar = new GregorianCalendar();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month-1);
+        calendar.set(Calendar.DAY_OF_MONTH, day);
+        Date date = calendar.getTime();
+        return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    }
 }

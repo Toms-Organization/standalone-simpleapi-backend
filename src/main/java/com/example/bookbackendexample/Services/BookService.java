@@ -102,4 +102,11 @@ public class BookService {
         List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(listOfTwoDates.get(0), listOfTwoDates.get(1)));
         return converter.convertToBookDto(listOfBooksBySearch);
     }
+    public List<BookDto> getAllBooksWrittenOnDay(int year, int month, int day) {
+        LocalDate localDate = converter.getSpecficDate(year, month, day);
+        List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWritten(localDate));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
+
+
 }

@@ -100,6 +100,16 @@ public class BookController {
         return bookService.getAllBooksWrittenThisMonth(year, month);
     }
 
+    @GetMapping("/published/{year}/{month}/{day}")
+    public List<BookDto> getAllBooksWrittenThatMonth(
+            @PathVariable("year") int year,
+            @PathVariable("month") int month,
+            @PathVariable("day") int day){
+        return bookService.getAllBooksWrittenOnDay(year, month, day);
+    }
+
+
+
 
 
 

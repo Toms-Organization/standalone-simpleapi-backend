@@ -6,16 +6,11 @@ import com.example.bookbackendexample.Util.Util;
 import com.example.bookbackendexample.models.Book;
 import com.example.bookbackendexample.repositories.BookRepository;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 @Service
@@ -91,17 +86,37 @@ public class BookService {
         return converter.convertToBookDto(listOfBooksBySearch);
     }
 
-    public List<BookDto> getAllBooksWrittenThisYear(int value1) {
-        Date startDate = converter.getStartDateFromAYear(value1);
-        Date endDate = converter.getEndDateFromAYear(value1);
-        System.out.println(startDate);
-        System.out.println(endDate);
-        List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(startDate, endDate));
-
-
-
+    public List<BookDto> getAllBooksWrittenThisYear(int year) {
+        List<LocalDate> listOfTwoDates = converter.getStartAndEndDateForYear(year);
+        List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(listOfTwoDates.get(0), listOfTwoDates.get(1)));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
+    public List<BookDto> getAllBooksWrittenThisMonth(int year, int month) {
+        List<LocalDate> listOfTwoDates = converter.getStartAndEndDateForYearAndMonth(year, month);
+        List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(listOfTwoDates.get(0), listOfTwoDates.get(1)));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
+    public List<BookDto> getAllBooksWrittenOnDay(int year, int month, int day) {
+        LocalDate localDate = converter.getSpecificDate(year, month, day);
+        List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWritten(localDate));
         return converter.convertToBookDto(listOfBooksBySearch);
     }
 
 
+    public Book updateBookInDataBase(BookDto bookDto, int id) {
+        Book book = bookRepository.findById(id).orElse(null);
+        if(book!=null){
+            book = util.updateABookObject(book, bookDto);
+            bookRepository.save(book);
+            return book;
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No user or products found");
+
+    }
+
+    public Book createBookInDataBase(BookDto bookDto) {
+        Book newBook = util.createANewBook(bookDto);
+        return bookRepository.save(newBook);
+
+    }
 }

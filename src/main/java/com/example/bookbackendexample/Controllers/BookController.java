@@ -5,6 +5,8 @@ import com.example.bookbackendexample.Services.dto.BookDto;
 import com.example.bookbackendexample.models.Book;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.format.annotation.NumberFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
@@ -94,5 +96,38 @@ public class BookController {
     public List<BookDto> getAllBooksWrittenThatYear(@PathVariable("value1") int value1){
         return bookService.getAllBooksWrittenThisYear(value1);
     }
+
+    @GetMapping("/published/{year}/{month}")
+    public List<BookDto> getAllBooksWrittenThatMonth(@PathVariable("year") int year, @PathVariable("month") int month){
+        return bookService.getAllBooksWrittenThisMonth(year, month);
+    }
+
+    @GetMapping("/published/{year}/{month}/{day}")
+    public List<BookDto> getAllBooksWrittenThatMonth(
+            @PathVariable("year") int year,
+            @PathVariable("month") int month,
+            @PathVariable("day") int day){
+        return bookService.getAllBooksWrittenOnDay(year, month, day);
+    }
+
+
+    @PostMapping("/update/{id}")
+    public ResponseEntity<Book> updateBookById(@RequestBody BookDto bookDto, @PathVariable("id") int id){
+        Book book = bookService.updateBookInDataBase(bookDto, id);
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
+    }
+
+
+
+    @PostMapping("/create")
+    public ResponseEntity<Book> updateBookById(@RequestBody BookDto bookDto){
+        Book book = bookService.createBookInDataBase(bookDto);
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
+    }
+
+
+
+
+
 
 }

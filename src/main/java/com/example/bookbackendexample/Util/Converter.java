@@ -5,7 +5,9 @@ import com.example.bookbackendexample.models.Book;
 import org.modelmapper.ModelMapper;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -25,9 +27,8 @@ public class Converter {
     }
 
 
-    public Date getStartDateFromAYear(int year){
+    public LocalDate getStartDateFromAYearLocalDate(int year){
         Calendar calendar = new GregorianCalendar();
-
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, Calendar.JANUARY);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
@@ -35,10 +36,11 @@ public class Converter {
         calendar.set(Calendar.MINUTE, 00);
         calendar.set(Calendar.SECOND, 00);
         Date date = calendar.getTime();
-        return date;
+        LocalDate date2 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return date2;
     }
 
-    public Date getEndDateFromAYear(int year){
+    public LocalDate getEndDateFromAYearLocalDate(int year){
         Calendar calendar = new GregorianCalendar();
 
         calendar.set(Calendar.YEAR, year);
@@ -48,7 +50,8 @@ public class Converter {
         calendar.set(Calendar.MINUTE, 59);
         calendar.set(Calendar.SECOND, 59);
         Date date = calendar.getTime();
-        return date;
+        LocalDate date2 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return date2;
     }
 
 

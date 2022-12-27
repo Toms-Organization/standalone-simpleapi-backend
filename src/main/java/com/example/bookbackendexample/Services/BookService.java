@@ -92,8 +92,8 @@ public class BookService {
     }
 
     public List<BookDto> getAllBooksWrittenThisYear(int value1) {
-        Date startDate = converter.getStartDateFromAYear(value1);
-        Date endDate = converter.getEndDateFromAYear(value1);
+        LocalDate startDate = converter.getStartDateFromAYearLocalDate(value1);
+        LocalDate endDate = converter.getEndDateFromAYearLocalDate(value1);
         System.out.println(startDate);
         System.out.println(endDate);
         List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(startDate, endDate));

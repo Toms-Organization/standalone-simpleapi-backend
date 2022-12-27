@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -25,7 +26,7 @@ public class Book {
     private String title;
     private String genre;
     private double price ;
-    private Date written;
+    private LocalDate written;
     private String description;
 
 }

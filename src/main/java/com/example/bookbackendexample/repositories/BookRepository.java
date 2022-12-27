@@ -27,7 +27,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
 
     List<Book> findAllByPriceBetween(double val1, double val2);
 
-    List<Book> findAllByWrittenBetween(Date dateOne, Date dateTwo);
 
+    List<Book> findAllByWrittenBetween(LocalDate dateOne, LocalDate dateTwo);
 
 }

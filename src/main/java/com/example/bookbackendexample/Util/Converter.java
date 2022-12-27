@@ -23,6 +23,19 @@ public class Converter {
         return convertedList;
     }
 
+
+    public List<Book> convertDtoToBook(List<BookDto> allBooksToConvert) {
+        List<Book> convertedList = allBooksToConvert.stream()
+                .map(e -> mapper.map(e, Book.class))
+                .collect(Collectors.toList());
+        return convertedList;
+    }
+
+    public Book convertDtoToBook(BookDto bookDto) {
+        return mapper.map(bookDto, Book.class);
+    }
+
+
     public List<LocalDate> getStartAndEndDateForYear(int year){
         List<LocalDate> listOfTwoValues = new ArrayList<>();
         Calendar calendar = new GregorianCalendar();

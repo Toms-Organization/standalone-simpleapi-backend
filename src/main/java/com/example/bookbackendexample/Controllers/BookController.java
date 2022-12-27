@@ -5,6 +5,8 @@ import com.example.bookbackendexample.Services.dto.BookDto;
 import com.example.bookbackendexample.models.Book;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.format.annotation.NumberFormat;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
@@ -109,6 +111,19 @@ public class BookController {
     }
 
 
+    @PostMapping("/update/{id}")
+    public ResponseEntity<Book> updateBookById(@RequestBody BookDto bookDto, @PathVariable("id") int id){
+        Book book = bookService.updateBookInDataBase(bookDto, id);
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
+    }
+
+
+
+    @PostMapping("/create")
+    public ResponseEntity<Book> updateBookById(@RequestBody BookDto bookDto){
+        Book book = bookService.createBookInDataBase(bookDto);
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
+    }
 
 
 

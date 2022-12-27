@@ -6,7 +6,9 @@ import com.example.bookbackendexample.Util.Util;
 import com.example.bookbackendexample.models.Book;
 import com.example.bookbackendexample.repositories.BookRepository;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -101,4 +103,20 @@ public class BookService {
     }
 
 
+    public Book updateBookInDataBase(BookDto bookDto, int id) {
+        Book book = bookRepository.findById(id).orElse(null);
+        if(book!=null){
+            book = util.updateABookObject(book, bookDto);
+            bookRepository.save(book);
+            return book;
+        }
+        throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No user or products found");
+
+    }
+
+    public Book createBookInDataBase(BookDto bookDto) {
+        Book newBook = util.createANewBook(bookDto);
+        return bookRepository.save(newBook);
+
+    }
 }

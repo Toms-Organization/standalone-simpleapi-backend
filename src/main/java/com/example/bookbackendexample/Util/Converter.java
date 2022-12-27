@@ -26,46 +26,45 @@ public class Converter {
         return convertedList;
     }
 
+    public List<LocalDate> getStartAndEndDateForYear(int year){
+        List<LocalDate> listOfTwoValues = new ArrayList<>();
 
-    public LocalDate getStartDateFromAYearLocalDate(int year){
         Calendar calendar = new GregorianCalendar();
+
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, Calendar.JANUARY);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
-        Date date = calendar.getTime();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        return localDate;
-    }
+        Date dateOne = calendar.getTime();
+        LocalDate localDateOne = dateOne.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        listOfTwoValues.add(localDateOne);
 
-    public LocalDate getEndDateFromAYearLocalDate(int year){
-        Calendar calendar = new GregorianCalendar();
-        calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, Calendar.DECEMBER);
-        Date date = calendar.getTime();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        return localDate;
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(calendar.DAY_OF_MONTH));
+        Date dateTwo = calendar.getTime();
+        LocalDate localDateTwo = dateTwo.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        listOfTwoValues.add(localDateTwo);
+        return listOfTwoValues;
     }
 
 
-    public LocalDate getStartDateFromAMonthLocalDate(int year, int month) {
+    public List<LocalDate> getStartAndEndDateForYearAndMonth(int year ,int month){
+        List<LocalDate> listOfTwoValues = new ArrayList<>();
         Calendar calendar = new GregorianCalendar();
+
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month-1);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
-        Date date = calendar.getTime();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        return localDate;
+        Date dateOne = calendar.getTime();
+        LocalDate localDateOne = dateOne.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        listOfTwoValues.add(localDateOne);
+
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(calendar.DAY_OF_MONTH));
+        Date dateTwo = calendar.getTime();
+        LocalDate localDateTwo = dateTwo.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        listOfTwoValues.add(localDateTwo);
+        return listOfTwoValues;
     }
 
-    public LocalDate getEndDateFromAMonthLocalDate(int year, int month){
-        Calendar calendar = new GregorianCalendar();
-        calendar.set(Calendar.YEAR, year);
-        calendar.set(Calendar.MONTH, month-1);
-        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(calendar.DAY_OF_MONTH));
-        Date date = calendar.getTime();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        return localDate;
-    }
 
 
 

@@ -4,11 +4,8 @@ import com.example.bookbackendexample.Services.dto.BookDto;
 import com.example.bookbackendexample.models.Book;
 import org.modelmapper.ModelMapper;
 
-import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -28,7 +25,6 @@ public class Converter {
 
     public List<LocalDate> getStartAndEndDateForYear(int year){
         List<LocalDate> listOfTwoValues = new ArrayList<>();
-
         Calendar calendar = new GregorianCalendar();
 
         calendar.set(Calendar.YEAR, year);
@@ -45,7 +41,6 @@ public class Converter {
         listOfTwoValues.add(localDateTwo);
         return listOfTwoValues;
     }
-
 
     public List<LocalDate> getStartAndEndDateForYearAndMonth(int year ,int month){
         List<LocalDate> listOfTwoValues = new ArrayList<>();
@@ -64,7 +59,6 @@ public class Converter {
         listOfTwoValues.add(localDateTwo);
         return listOfTwoValues;
     }
-
 
     public LocalDate getSpecificDate(int year, int month, int day) {
         Calendar calendar = new GregorianCalendar();

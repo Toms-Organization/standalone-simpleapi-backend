@@ -6,16 +6,9 @@ import com.example.bookbackendexample.Util.Util;
 import com.example.bookbackendexample.models.Book;
 import com.example.bookbackendexample.repositories.BookRepository;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.Period;
-import java.time.format.DateTimeFormatter;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 @Service
@@ -91,12 +84,11 @@ public class BookService {
         return converter.convertToBookDto(listOfBooksBySearch);
     }
 
-    public List<BookDto> getAllBooksWrittenThisYear(int value1) {
-        List<LocalDate> listOfTwoDates = converter.getStartAndEndDateForYear(value1);
+    public List<BookDto> getAllBooksWrittenThisYear(int year) {
+        List<LocalDate> listOfTwoDates = converter.getStartAndEndDateForYear(year);
         List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(listOfTwoDates.get(0), listOfTwoDates.get(1)));
         return converter.convertToBookDto(listOfBooksBySearch);
     }
-
     public List<BookDto> getAllBooksWrittenThisMonth(int year, int month) {
         List<LocalDate> listOfTwoDates = converter.getStartAndEndDateForYearAndMonth(year, month);
         List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(listOfTwoDates.get(0), listOfTwoDates.get(1)));

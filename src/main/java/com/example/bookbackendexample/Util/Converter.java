@@ -66,7 +66,7 @@ public class Converter {
     }
 
 
-    public LocalDate getSpecficDate(int year, int month, int day) {
+    public LocalDate getSpecificDate(int year, int month, int day) {
         Calendar calendar = new GregorianCalendar();
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, month-1);

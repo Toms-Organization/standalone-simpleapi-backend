@@ -94,14 +94,17 @@ public class BookService {
     public List<BookDto> getAllBooksWrittenThisYear(int value1) {
         LocalDate startDate = converter.getStartDateFromAYearLocalDate(value1);
         LocalDate endDate = converter.getEndDateFromAYearLocalDate(value1);
-        System.out.println(startDate);
-        System.out.println(endDate);
         List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(startDate, endDate));
-
-
-
         return converter.convertToBookDto(listOfBooksBySearch);
     }
 
 
+    public List<BookDto> getAllBooksWrittenThisMonth(int year, int month) {
+        LocalDate startDate = converter.getStartDateFromAMonthLocalDate(year, month);
+        LocalDate endDate = converter.getEndDateFromAMonthLocalDate(year, month);
+        System.out.println(startDate);
+        System.out.println(endDate);
+        List<Book> listOfBooksBySearch = util.sortByDatePublished(bookRepository.findAllByWrittenBetween(startDate, endDate));
+        return converter.convertToBookDto(listOfBooksBySearch);
+    }
 }

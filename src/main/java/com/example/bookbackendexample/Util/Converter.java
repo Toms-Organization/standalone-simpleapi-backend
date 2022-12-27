@@ -32,26 +32,39 @@ public class Converter {
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, Calendar.JANUARY);
         calendar.set(Calendar.DAY_OF_MONTH, 1);
-        calendar.set(Calendar.HOUR_OF_DAY, 00);
-        calendar.set(Calendar.MINUTE, 00);
-        calendar.set(Calendar.SECOND, 00);
         Date date = calendar.getTime();
-        LocalDate date2 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        return date2;
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return localDate;
     }
 
     public LocalDate getEndDateFromAYearLocalDate(int year){
         Calendar calendar = new GregorianCalendar();
-
         calendar.set(Calendar.YEAR, year);
         calendar.set(Calendar.MONTH, Calendar.DECEMBER);
-        calendar.set(Calendar.DAY_OF_MONTH, 31);
-        calendar.set(Calendar.HOUR_OF_DAY, 23);
-        calendar.set(Calendar.MINUTE, 59);
-        calendar.set(Calendar.SECOND, 59);
         Date date = calendar.getTime();
-        LocalDate date2 = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        return date2;
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return localDate;
+    }
+
+
+    public LocalDate getStartDateFromAMonthLocalDate(int year, int month) {
+        Calendar calendar = new GregorianCalendar();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month-1);
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        Date date = calendar.getTime();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return localDate;
+    }
+
+    public LocalDate getEndDateFromAMonthLocalDate(int year, int month){
+        Calendar calendar = new GregorianCalendar();
+        calendar.set(Calendar.YEAR, year);
+        calendar.set(Calendar.MONTH, month-1);
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.getActualMaximum(calendar.DAY_OF_MONTH));
+        Date date = calendar.getTime();
+        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        return localDate;
     }
 
 

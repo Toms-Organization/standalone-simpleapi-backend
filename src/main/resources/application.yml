@@ -8,6 +8,11 @@ spring:
     username: root
     password: 123456tg
 
+
+springdoc:
+  swagger-ui:
+    path: /SwaggerApiDocumentation
+
   jpa:
     properties:
       hibernate:
@@ -17,4 +22,6 @@ spring:
 #  spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/demoversion
 #  spring.datasource.username=root
 #  spring.datasource.password=123456tg
+
+# swagger-ui custom path
 

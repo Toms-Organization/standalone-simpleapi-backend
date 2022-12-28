@@ -24,4 +24,5 @@ springdoc:
 #  spring.datasource.password=123456tg
 
 # swagger-ui custom path
+# springdoc.swagger-ui.path=/swagger-ui.html
 

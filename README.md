@@ -19,3 +19,7 @@ example on localhost: http://localhost:7000/SwaggerApiDocumentation
 
 ### Swagger: 
 ![img.png](img.png)
+
+
+### Workdescription 
+https://drive.google.com/drive/u/0/folders/1YCbIS8iMMWdyaB1zX3W8DRbAN5GBtLw3

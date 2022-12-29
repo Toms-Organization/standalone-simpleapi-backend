@@ -22,4 +22,5 @@ example on localhost: http://localhost:7000/SwaggerApiDocumentation
 
 
 ### Workdescription 
-https://drive.google.com/drive/u/0/folders/1YCbIS8iMMWdyaB1zX3W8DRbAN5GBtLw3
+https://drive.google.com/file/d/1kTSW1SmE5qNiOvOT08LTCNXOK-X3cp8m/view?usp=sharing
+

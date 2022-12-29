@@ -1,4 +1,0 @@
-       Book bookA = bookRepository.findById(id).orElse(null);
-        BookDto dto = mapper.map(bookA, BookDto.class);
-        return mapper.map(bookA, BookDto.class);
-    }

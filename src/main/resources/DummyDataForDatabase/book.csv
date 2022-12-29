@@ -1,0 +1,101 @@
+id,author,title,genre,price,written,description
+1,"Burg, David F.",A world history of tax rebellions,Fantasy,9.99,2001-01-01,Fun book about fantasy
+2,"Palombi, Luigi",Gene cartels,Sport,15,2015-10-10,Fun book about sport
+3,mulitple authors,Handbook of time series analysis,History,15,2004-11-15,Fun book about History
+4,Encyclopedia of analytical chemistry,Encyclopedia of analytical chemistry,Science,15,2019-03-01,Fun book about Science
+5,"Heap, Shaun Hargreaves",Game theory,Nature,39.99,2004-11-11,Fun book Nature
+6,"Miller, Stephen J.",Metadata for digital collections,Sport,29.5,2001-01-01,Fun book Sport
+7,"Rasmusen, Eric",Games and information,News,38.95,2004-01-12,Fun book News
+8,Encyclopedia of analytical chemistry,Encyclopedia of analytical chemistry,Tables,4.99,2009-02-11,Fun book Tables
+9,"White, Martin",The intranet management handbook,Mouse,39.95,2001-01-01,Fun book Mouse
+10,Encyclopedia of analytical chemistry,Encyclopedia of analytical chemistry,Computers,25,2001-01-01,Fun book Computers
+11,"Mikulesky, Beatrice S.",More reading power,Tutorial,39.95,2009-02-22,This is a sampleBook
+12,"Mikulesky, Beatrice S.",Reading power,Fantasy,39.95,2009-02-23,This is a sampleBook
+13,"Blanchard, Karen",From reading to writing 2,Sport,15,2009-02-25,changing Book description
+14,"Skipper, Mark",Advanced grammar & vocabulary,History,45,2001-01-01,changing Book description
+15,"Wells, J. C. (John Christopher)",Longman pronunciation dictionary,Science,69.99,2009-02-20,About music
+16,"McClisky, Marie",English for banking in higher education studies,Nature,19.95,2007-07-07,Fun book about fantasy
+17,"Doff, Andrian",Language in use,Sport,29.5,2007-07-07,Fun book about sport
+18,Wikipedia,Longman exams dictionary,News,1.99,2007-07-08,Fun book about History
+19,"Cassriel, Betsy",Academic connections 1,Tables,1.99,2005-06-05,Fun book about Science
+20,"Levrai, Peter",English for the energy industries,Mouse,38.95,2007-07-09,Fun book Nature
+21,"Sanabria, Kim, 1955-",Academic listening encounters,Fantasy,38.95,2007-07-12,Fun book Sport
+22,"Mackenzie, Ian",English for the financial sector,Sport,1.95,2005-06-05,Fun book News
+23,"McCarthy, Michael, 1947-",English vocabulary in use,History,38.95,2004-01-12,Fun book Tables
+24,"Mackenzie, Ian",English for the financial sector,Science,4.99,2004-01-12,Fun book Mouse
+25,"Creswell, John W.",Research design,Nature,39.95,2005-06-05,Fun book Computers
+26,Encyclopedia of analytical chemistry,Encyclopedia of analytical chemistry,Sport,25,2003-04-01,This is a sampleBook
+27,"Mol, Hans, 1961-",English for tourism and hospitality in higher education studies,News,39.95,2008-06-01,This is a sampleBook
+28,"Sanabria, Kim, 1955-",Academic listening encounters,Tables,39.95,2020-02-05,Fun book about fantasy
+29,"Williams, Julia",Academic connections 4,Mouse,15,2019-03-01,Fun book about sport
+30,"Mascull, Bill",Business vocabulary in use,Computers,45,2015-01-01,Fun book about History
+31,"Morley, John",University writing course,Tutorial,69.99,2011-01-01,Fun book about Science
+32,"Woolard, George",Key words for fluency,Tutorial 2.0,19.95,2008-01-01,Fun book Nature
+33,"Cunningham, Sarah, 1960-",Cutting edge,Mouse,29.5,2001-01-01,Fun book Sport
+34,"Hartley, James",Academic writing and publishing,Fantasy,1.99,2000-01-01,Fun book News
+35,"Phillips, Terry, 1949-",Skills in English. Level 2,Sport,1.99,1987-09-25,Fun book Tables
+36,"Doff, Andrian",Language links,History,38.95,1999-05-22,Fun book Mouse
+37,"Phillips, Terry, 1949-",Skills in English. Level 3,Science,38.95,1945-10-11,Fun book Computers
+38,"Kisslinger, Ellen",Contemporary topics 2,Nature,1.95,2022-12-26,This is a sampleBook
+39,"Murray, Rowena",How to write a thesis,Sport,1.99,2022-12-26,This is a sampleBook
+40,"McCarthy, Michael, 1947-",English collocations in use. Intermediate,News,1.99,2008-06-01,changing Book description
+41,"Lowe, Susan",Negotiating,Tables,38.95,2008-06-01,changing Book description
+42,"Esteras, Santiago Remacha",Professional English in use,Mouse,38.95,2008-06-01,About music
+43,"O'Dell, Felicity, 1947-",English collocations in use,Computers,1.95,1945-10-11,Fun book Nature
+44,"Marks, Jon",IELTS resource pack,Tutorial,38.95,2007-07-22,Fun book Sport
+45,"Herzfeld-Pipkin, Nancy",Destinations 2,Tutorial 2.0,4.99,1967-05-11,Fun book News
+46,"O'Connell, Sue",Focus on IELTS,Fantasy,39.95,2005-06-05,Fun book Tables
+47,"Walker, Carolyn",English for business studies in higher education studies,Sport,25,1967-05-11,Fun book Mouse
+48,mulitple authors,Morson and Dawson's gastrointestinal pathology,History,39.95,2003-04-01,Fun book Computers
+49,"Murphy, Raymond",Essential grammar in use,Science,39.95,1967-05-11,This is a sampleBook
+50,"Sanabria, Kim, 1955-",Academic listening encounters,Nature,15,1967-05-11,This is a sampleBook
+51,Encyclopedia of analytical chemistry,Encyclopedia of smart materials,Sport,45,1967-05-11,Fun book about fantasy
+52,"Doff, Andrian",Language in use,News,69.99,2004-01-12,Fun book about sport
+53,"Hughes, Rebecca",Exploring grammar in writing,Tables,19.95,2005-06-05,Fun book about History
+54,"Walker, Carolyn",English for business studies in higher education,Mouse,29.5,2005-06-05,Fun book about Science
+55,Encyclopedia of analytical chemistry,Encyclopedia of analytical chemistry,Fantasy,1.99,2004-01-12,Fun book Nature
+56,"Vepa, Ranjan",Dynamics of smart structures,Sport,1.99,2004-01-12,Fun book Sport
+57,"Cotton, David",Language leader,History,38.95,2005-06-05,Fun book News
+58,"Carter, Ronald, 1947-2018",Exploring grammar in context,Science,38.95,2004-01-12,Fun book Tables
+59,"Harrison, Louis",Achieve IELTS,Nature,1.95,2004-01-12,Fun book Mouse
+60,"Lowe, Susan",Presenting,Sport,38.95,2004-01-12,Fun book Computers
+61,mulitple authors,Longman photo dictionary,News,38.95,2005-06-05,This is a sampleBook
+62,"Krois-Linder, Amy",International legal English,Tables,1.95,2004-01-12,This is a sampleBook
+63,"Callanan, Helen",Absolute legal English,Mouse,29.5,2005-06-05,changing Book description
+64,"Macfarlane, Michael",English practice grammar,Computers,29.5,2004-01-12,changing Book description
+65,"Woolard, George",Key words for fluency,Fantasy,29.5,2005-06-05,About music
+66,"Robbins, Sue",Collins COBUILD business vocabulary in practice,Sport,38.95,2004-01-12,Fun book Nature
+67,"Folse, Keith S.",Great writing 2,History,4.99,2008-06-01,Fun book Sport
+68,"Folse, Keith S.",Great writing 3,Science,39.95,2020-02-05,Fun book News
+69,"Cushen, Caroline",Achieve IELTS 2,Nature,25,2019-03-01,Fun book Tables
+70,"Black, Michael",Objective IELTS,Sport,39.95,2015-01-01,Fun book Mouse
+71,"Herzfeld-Pipkin, Nancy",Destinations 2,News,39.95,2011-01-01,Fun book Computers
+72,"Herzfeld-Pipkin, Nancy",Destinations 1,Tables,15,2008-01-01,This is a sampleBook
+73,"McCarthy, Michael, 1947-",English phrasal verbs in use,Mouse,45,2001-01-01,This is a sampleBook
+74,"Keller, Eric",Conversation gambits,Computers,69.99,2000-01-01,changing Book description
+75,"Wilson, Paige",Writing essentials,Fantasy,19.95,1987-09-25,changing Book description
+76,"King, David",Meetings,Sport,29.5,1999-05-22,About music
+77,mulitple authors,Classical econophysics,History,1.99,1945-10-11,Fun book Mouse
+78,"Hill, David A.",Academic connections 2,Science,38.95,2022-12-26,Fun book Computers
+79,"Smith-Palinkas, Barbara",Key concepts 1,Nature,4.99,2022-12-26,This is a sampleBook
+80,"Solomon, Elena Vestri",Key concepts 1,Sport,39.95,2008-06-01,This is a sampleBook
+81,"Martinez, Ron",Conversation lessons,News,25,2008-06-01,changing Book description
+82,Encyclopedia of analytical chemistry,Encyclopedia of analytical chemistry,Tables,39.95,2008-06-01,changing Book description
+83,"Pavlik, Cheryl",Hot topics 2,Mouse,39.95,1999-08-13,About music
+84,"Cotton, David",Market leader,Computers,15,1999-01-13,Fun book Nature
+85,"Pratten, Julie",Absolute financial English,Fantasy,45,1991-05-15,Fun book Sport
+86,"Beglar, David",Contemporary topics 3,Sport,69.99,2001-01-01,Fun book News
+87,"Sharma, Pete",Reading the news,History,19.95,2008-06-01,Fun book Tables
+88,mulitple authors,Integrated Chinese,Science,29.5,2020-02-05,Fun book about fantasy
+89,"Black, Michael",Objective IELTS,Nature,1.99,2019-03-01,Fun book about sport
+90,"Doff, Andrian",Language links,Fantasy,1.99,2015-01-01,Fun book about History
+91,mulitple authors,Developing grounded theory,Sport,38.95,2011-01-01,Fun book about Science
+92,"Kerridge, David",Basic business role plays,History,38.95,2008-01-01,Fun book Nature
+93,"Leonhard, Barbara Harris",Discoveries in academic writing,Science,1.95,2001-01-01,Fun book Sport
+94,"Mikulesky, Beatrice S.",Advanced reading power,Nature,1.99,2000-01-01,Fun book News
+95,"McCarthy, Michael, 1947-",English phrasal verbs in use,Sport,38.95,1987-09-25,Fun book Tables
+96,"Mol, Hans, 1961-",English for tourism and hospitality in higher education studies,News,38.95,1999-05-22,Fun book Mouse
+97,"Pavlik, Cheryl",Hot topics 3,Tables,1.95,1945-10-11,Fun book Computers
+98,"Thomas, Gary",How to Do Your Research Project,Mouse,38.95,2022-12-26,This is a sampleBook
+99,Encyclopedia of analytical chemistry,Encyclopedia of analytical chemistry,Computers,1.95,2022-12-26,This is a sampleBook
+100,mulitple authors,Reference manual on scientific evidence,Tutorial,29.5,2008-06-01,changing Book description

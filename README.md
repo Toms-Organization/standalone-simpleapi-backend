@@ -1,7 +1,8 @@
 # BookBackend Details
 ### Using: 
-* SpringBoot 3.0 
-* Using MySQL as datasource
+* SpringBoot 3.0
+* MySQL as datasource
+* OpenAPI 3.0 (Swagger)
 
 
 
@@ -10,9 +11,12 @@
 - Visit: {http:://yourUrl}/SwaggerApiDocumentation
 example on localhost: http://localhost:7000/SwaggerApiDocumentation
 
-
-
-# Getting Started
-
-### Reference Documentation
+# SETUP 
+## Getting Started
+- Clone Repo
+- Create a MySQL database
+- Add the database csv file to your database. 
+- Modify the application.yml with database settings
+  - Check Database name and match it to the DB created
+  - Check User and password 
 
